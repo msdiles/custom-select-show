@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.settings {
+  border-right: 1px dashed #ccc;
+  width: 350px;
+}
+
+.settings h2 {
+  margin-bottom: 1rem;
+}
+
+.settings ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+
+
+.selector-main {
+  border-bottom: 1px solid black;
+  width: 300px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.selector-main .label {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  font-size: medium;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 0.4s;
+}
+
+.selector-main.open .label {
+  font-size: x-small;
+  color: rgb(162, 163, 163);
+  position: relative;
+  top: -15px;
+  left:5px;
+  transition: 0.4s ;
+}
+
+.selector-main.chosen .label {
+  font-size: x-small;
+  color: #1370f3;
+  position: relative;
+  top: -15px;
+  left:5px;
+  transition: 0.4s;
+}
+
+
+.selector-main .active-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.selector-main .hide-scroll {
+  transform: scale(0.0);
+  transition: 0.2s;
+  /* display: none; */
+  margin-top: 0.5rem;
+  width: 100%;
+  max-height: 10rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  position: relative;
+}
+
+.selector-main .elements-list {
+  box-sizing: content-box;
+  width:calc( 100% + 2rem);
+  overflow-y: scroll;
+  max-height: 10rem;
+  padding-right: 4rem;
+  margin-right:-4rem;
+}
+
+.selector-main.open .hide-scroll {
+  /* display: block; */
+  transform: scale(1.0);
+  transition: 0.2s;
+
+}
+
+.selector-main .elements-list .element {
+  padding: 0.7rem;
+  height: 2.5rem;
+}
+
+.selector-main .elements-list .element:hover {
+  background-color: rgb(230, 227, 227);
+}
+
+.selector-main .elements-list .element p {
+  margin-left: 0.3rem;
+}
+
+.selector-main:after {
+  content: "\25B2";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform:  rotate(180deg) scale(0.7);
+  transition: 0.4s;
+}
+
+.selector-main.open:after {
+  content: "\25B2";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0.7);
+  transition: 0.4s;
+}
